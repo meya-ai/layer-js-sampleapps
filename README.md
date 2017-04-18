@@ -16,8 +16,6 @@ To deploy this service:
 This will startup the deploy process, and end with a zip file being downloaded which contains this repo, preconfigured
 for this app and your Identity Service.
 
-To run this sample, you need to setup an Identity Service.  This can be done via a Deploy to Heroku button.
-
 This Identity Service provides you a sample server for purposes of testing and demoing Layer's products.
 
 This server:
