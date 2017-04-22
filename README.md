@@ -189,3 +189,7 @@ var ConversationView = LayerUIWidgets.Conversation;
 ```
 
 After initializing the UI Framework, the adatpor generates the Backbone views so that they can be instantiated and used.
+
+### Framework7 Mobile Web with Layer UI
+
+The [Framework7 App](./examples/ui-web-samples/framework7) contains a demo showing what Layer UI can look like on a mobile device.  Note that for best results you should save the web app to your home screen and launch it there.
