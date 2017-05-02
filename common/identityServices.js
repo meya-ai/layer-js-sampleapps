@@ -3,12 +3,16 @@
 
   // Synchronous load of the configuration
   var config;
-  var request = new XMLHttpRequest();
-  request.onload = function() {
-    config = JSON.parse(this.responseText);
-  };
-  request.open('GET', 'common/LayerConfiguration.json', false);
-  request.send();
+  if (window.layerSampleConfig) {
+    config = window.layerSampleConfig;
+  } else {
+    var request = new XMLHttpRequest();
+    request.onload = function() {
+      config = JSON.parse(this.responseText);
+    };
+    request.open('GET', 'common/LayerConfiguration.json', false);
+    request.send();
+  }
 
   if (!config[0].app_id) throw new Error("No app_id key found in LayerConfiguration.json");
 
@@ -75,7 +79,7 @@
           callback(res.data.identity_token);
 
           // Cleanup identity dialog
-          var node = document.getElementById('identity');
+          var node = window.document && document.getElementById('identity');
           if (node) node.parentNode.removeChild(node);
         } else {
           alert('Login failed; please check your user id and password');
@@ -94,7 +98,7 @@
     }
   };
 
-document.addEventListener('DOMContentLoaded', function() {
+window.document && document.addEventListener('DOMContentLoaded', function() {
   /**
    * Dirty HTML dialog injection
    */
