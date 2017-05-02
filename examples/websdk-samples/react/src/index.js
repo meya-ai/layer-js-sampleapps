@@ -21,7 +21,7 @@ let client = new Client({
  *
  * See http://static.layer.com/sdk/docs/#!/api/layer.Client-event-challenge
  */
-client.once('challenge', e => {
+client.on('challenge', e => {
   window.layerSample.getIdentityToken(e.nonce, e.callback);
 });
 

@@ -30,7 +30,7 @@ var client = new layer.Client({
  *
  * See http://static.layer.com/sdk/docs/#!/api/layer.Client
  */
-client.once('challenge', function(e) {
+client.on('challenge', function(e) {
   window.layerSample.getIdentityToken(e.nonce, e.callback);
 });
 

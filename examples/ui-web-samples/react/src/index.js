@@ -19,7 +19,7 @@ let client = new Layer.Client({
  * Client authentication challenge.
  * Sign in to Layer sample identity provider service.
  */
-client.once('challenge', e => {
+client.on('challenge', e => {
   window.layerSample.getIdentityToken(e.nonce, e.callback);
 });
 
