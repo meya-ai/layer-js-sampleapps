@@ -9,7 +9,7 @@ export default class Avatar extends Component {
   }
 
   renderUserItem = (user) => {
-    return user.avatarUrl ?  <span key={'avatar-' + user.id}><img src={user.avatarUrl} /></span> : <span className='no-avatar'>{user.displayName.substring(0,2)}</span>;
+    return user.avatarUrl ?  <span key={'avatar-' + user.id}><img src={user.avatarUrl} /></span> : <span key={'avatar-' + user.id} className='no-avatar'>{user.displayName.substring(0,2)}</span>;
   }
 
   render() {
